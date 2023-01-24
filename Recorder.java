@@ -20,29 +20,12 @@ public class Recorder {
         if(!map.containsKey(key)) {
             throw new IllegalArgumentException();
         }  
-        map.remove(key);//何の役割？
+        map.remove(key);
         System.out.println("deleted:" + key);
     } 
 
     public void delete() {
-        map.clear();//?
+        map.clear();
         System.out.println("deleted all");        
     }
 }
-
-
-
-/*
-
-import java.util.Map;
-
-public class Recorder {
-    public static void main(String[] args) {
-    Map<String, Integer> prefs = new HashMap<>();
-    prefs.put("京都府", 255);
-    prefs.put("東京都", 1261);
-    prefs.put("熊本県", 181);
-    int tokyo =  prefs.get("東京都");
-    System.out.println("東京都" + "=" + tokyo);
-    }
-}*/
