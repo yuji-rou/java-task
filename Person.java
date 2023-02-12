@@ -1,25 +1,33 @@
 public class Person {
-  public enum Gender { MAN, WOMAN};
-  private Gender gender;
+  public enum Gender {MAN("man"),WOMAN("woman");
+
+    //文字列を保持するフィールド
+    private final String text;
+
+    //コンストラクタ
+    private Gender(final String text) {
+        this.text = text;
+    }
+
+    //文字列取得用メソッド
+    public String getValue() {
+        return this.text;
+    }
+  }
+
+  private Gender gender; 
 
   public Person(Gender gender) {
     this.gender = gender;
   }
-  public void speak() {
-    switch (gender){
-      case MAN:
-        System.out.println("I'm a man");
-        break;
-      case WOMAN:
-      System.out.println("I'm a woman");
-      break;  
-    }
- }
- public static void main(String[] args){
-    Person man = new Person(Gender.MAN); 
-    man.speak();
 
-    Person woman = new Person(Gender.WOMAN);
-    woman.speak();
+  public void speak() {  
+    System.out.println("I'm a " + this.gender.getValue());
+  }
+ 
+ 
+ public static void main(String[] args){
+  new Person(Gender.MAN).speak();
+  new Person(Gender.WOMAN).speak();
  }
 }
