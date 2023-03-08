@@ -1,9 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.*;
+import java.util.logging.Logger;
 
 public class TextReader {
     private String path;
@@ -24,9 +23,9 @@ public class TextReader {
             while ((line = br.readLine()) != null) {
                 valueList.add(Integer.parseInt(line)); 
             }
-        for (int value : valueList) {
+            for (int value : valueList) {
                 System.out.println(value);
-        } 
+            } 
         } catch (IOException e) {
             e.printStackTrace();
         }
