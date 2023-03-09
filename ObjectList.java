@@ -1,4 +1,4 @@
-import java.util.ArrayList;//pushの為のコメント
+import java.util.ArrayList;
 
 public class ObjectList<T>extends ArrayList<T> {
     public boolean add(T value) {
